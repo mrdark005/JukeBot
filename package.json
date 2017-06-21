@@ -1,6 +1,6 @@
 {
   "name": "jukebot",
-  "version": "5.1.7",
+  "version": "5.1.8",
   "description": "MusicBot for Discord",
   "main": "index.js",
   "scripts": {
@@ -14,13 +14,14 @@
   "author": "CrimsonXV",
   "license": "AGPL-3.0",
   "dependencies": {
-    "eris": "^0.6.0",
-    "eventemitter3": "^2.0.3",
-    "gcc": "^1.0.2",
-    "node-opus": "^0.2.6",
-    "retry-stream": "github:vexera/retry-stream",
-    "sodium-native": "^1.9.0",
-    "superagent": "^3.5.2",
-    "ytdl-core": "^0.13.2"
+    "buffered2": "*",
+    "eris": "*",
+    "erlpack": "github:hammerandchisel/erlpack",
+    "eventemitter3": "*",
+    "node-opus": "*",
+    "snekfetch": "*",
+    "sodium-native": "*",
+    "uws": "*",
+    "ytdl-core": "*"
   }
 }

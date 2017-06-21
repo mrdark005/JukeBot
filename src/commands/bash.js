@@ -1,9 +1,9 @@
-const superagent = require("superagent");
-const bash       = require("child_process");
+const sf   = require("snekfetch");
+const bash = require("child_process");
 
 exports.run = async function(client, msg, args) {
 	if (msg.author.id !== "180093157554388993") return msg.channel.createMessage({ embed: {
-		color: 0x1E90FF,
+		color: config.options.embedColour,
 		title: ":warning: Restricted Command",
 		description: "This command is locked to the developer only."
 	}});

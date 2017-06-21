@@ -1,16 +1,20 @@
 {
 
-	"token"      : "",
-	"prefix"     : "",
-	"version"    : "5.1.7",
-	"owners"     : [],
-	"botlists"   : {
-		"_clientid" : "",
-		"dbots"    : "",
-		"dbl"      : ""
+	"keys" : {
+		"discord"    : "",
+		"youtube"    : "",
+		"soundcloud" : ""
 	},
-	"youtube"    : "",
-	"soundcloud" : "",
-	"hardblock"  : [],
-	"donators"   : []
+	"options" : {
+		"shards"      : 1,
+		"embedColour" : 2003199,
+		"prefix"      : "!"
+	},
+	"prop" : {
+		"owners"   : [],
+		"donators" : [],
+		"blocked"  : []
+	},
+	"version" : "5.1.8"
+
 }

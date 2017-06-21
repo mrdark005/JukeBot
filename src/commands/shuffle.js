@@ -1,14 +1,22 @@
 exports.run = function (client, msg, args) {
 
-	if (!permissions.isAdmin(msg.member)) return msg.channel.createMessage({ embed: {
-		color: 0x1E90FF,
-		title: "Insufficient Permissions",
-	}});
+	if (!permissions.isAdmin(msg.member))
+		return msg.channel.createMessage({ embed: {
+			color: config.options.embedColour,
+			title: "Insufficient Permissions",
+		}});
 
-	if (!client.voiceConnections.get(msg.channel.guild.id)) return msg.channel.createMessage({ embed: {
-		color: 0x1E90FF,
-		title: "There's no playback activity."
-	}});
+	if (!client.voiceConnections.get(msg.channel.guild.id))
+		return msg.channel.createMessage({ embed: {
+			color: config.options.embedColour,
+			title: "There's no playback activity"
+		}});
+
+	if (guilds[msg.channel.guild.id].queue.length < 3)
+		return msg.channel.createMessage({ embed: {
+			color: config.options.embedColour,
+			title: "There's not enough songs in the queue to shuffle",
+		}});
 
 	let tempqueue = guilds[msg.channel.guild.id].queue.slice(1);
 	let curInd = tempqueue.length, tempVal, randInd;
@@ -27,7 +35,7 @@ exports.run = function (client, msg, args) {
 	guilds[msg.channel.guild.id].queue = tempqueue;
 
 	msg.channel.createMessage({ embed: {
-		color: 0x1E90FF,
+		color: config.options.embedColour,
 		title: "Queue Shuffled."
 	}});
 
